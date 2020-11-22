@@ -52,7 +52,7 @@ class Bullet(pygame.sprite.Sprite):
         self.rect.y = y
 
     def update(self):
-        self.rect.x += 20  # bullet speed
+        self.rect.x += 12  # bullet speed
         if self.rect.x > width + 100:
             self.kill()
             pass
@@ -66,8 +66,8 @@ class Alien(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
-        self.step_y = random.randrange(-5, 5)
-        self.step_x = random.randrange(6, 10)
+        self.step_y = random.randrange(-3, 3)
+        self.step_x = random.randrange(3, 7)
 
     def update(self):
         self.rect.x -= self.step_x
@@ -89,7 +89,7 @@ jet_group.add(jet_sprite)
 # Game loop goes here
 running = True
 while running:
-    clock.tick(50)  # This game is 50 fps
+    clock.tick(100)  # This game is 100 fps
     my_screen.blit(bg, (0, 0))
 
     alien_group.draw(my_screen)
